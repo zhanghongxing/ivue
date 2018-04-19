@@ -22,8 +22,8 @@ new Vue({
     content: {
       handler(val, oldVal) {
         console.log('new note:', val, 'old note:', oldVal)
+        localStorage.setItem('content', val)
       },
-      immediate: false,
     },
   },
 })
