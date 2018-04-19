@@ -5,7 +5,7 @@ new Vue({
   // Some data        
   data() {
     return {
-      content: 'This is a note.',
+      content: 'I'm in **bold**! **Bold** *Italic* [link]http://vuejs.org',
     }
   },
   // Computed properties
