@@ -5,7 +5,7 @@ new Vue({
   // Some data        
   data() {
     return {
-      content: 'I'm in **bold**! **Bold** *Italic* [link]http://vuejs.org',
+      content: 'I\'m in **bold**! **Bold** *Italic* [link]http://vuejs.org',
     }
   },
   // Computed properties
