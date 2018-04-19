@@ -20,10 +20,15 @@ new Vue({
   watch: {
     // Watching 'content' data property    
     content: {
-      handler(val, oldVal) {
-        console.log('new note:', val, 'old note:', oldVal)
-        localStorage.setItem('content', val)
-      },
+      handler: 'saveNote',
     },
   },
+  
+  methods: {
+    saveNote(val) {
+      console.log('saving note:', val)
+      localStorage.setItem('content', val)
+    },
+  },
+  
 })
