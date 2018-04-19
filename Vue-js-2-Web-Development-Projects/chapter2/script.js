@@ -26,6 +26,10 @@ new Vue({
     saveNote(val) {
       console.log('saving note:', val)
       localStorage.setItem('content', val)
+      this.reportOperation('saving')
+    },
+    reportOperation (opName) {
+      console.log('The', opName, 'operation was completed!')
     },
   },
   
