@@ -19,9 +19,7 @@ new Vue({
   // Change watchers  
   watch: {
     // Watching 'content' data property    
-    content: {
-      handler: 'saveNote',
-    },
+    content: 'saveNote',
   },
   
   methods: {
