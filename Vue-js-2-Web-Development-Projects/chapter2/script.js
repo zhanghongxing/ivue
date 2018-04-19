@@ -36,5 +36,7 @@ new Vue({
       console.log('The', opName, 'operation was completed!')
     },
   },
-  
+
 })
+
+console.log('restored note:', localStorage.getItem('content'))
