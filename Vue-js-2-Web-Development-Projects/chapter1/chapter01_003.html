@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Project Guide setup
+    </title>
+  </head>
+  <body>
+    <!-- Include the library in the page -->
+    <script src="https://unpkg.com/vue/dist/vue.js">
+    </script>
+    <!-- Some HTML -->
+    <div id="root">
+      <p>Is this an Hello world?
+      </p>
+    </div>
+    <!-- Some JavaScript -->
+    <script>  console.log('Yes! We are using Vue version', Vue.version) 
+    // New Vue instancevar 
+    var app = new Vue({ // CSS selector of the root DOM element  
+        data() {
+            return {
+                message: 'Hello Vue.js!',
+            }
+        },
+    })
+    // We add the instance to the page
+    app.$mount('#root')
+    </script>
+  </body>
+</html>
