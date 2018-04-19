@@ -8,4 +8,11 @@ new Vue({
             content: 'This is a note.',
         }
     },
+    // Computed properties
+    computed: {
+      notePreview() { 
+        // Markdown rendered to HTML    
+        return marked(this.content)
+      },
+    },
 })
