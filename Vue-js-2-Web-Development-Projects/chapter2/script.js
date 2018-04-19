@@ -19,7 +19,11 @@ new Vue({
   // Change watchers  
   watch: {
     // Watching 'content' data property    
-    content: 'saveNote',
+    content (val, oldVal) {
+      console.log('new note:', val, 'old note:', oldVal),
+      console.log('saving note:', this.content)
+      localStorage.setItem('content', this.content)
+    },
   },
   
   methods: {
