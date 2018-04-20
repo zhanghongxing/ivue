@@ -23,6 +23,10 @@
             <!--<button v-bind:title="notes.length + ' note(s) already'" @click="addNote"><i class="material-icons">add</i> Add note</button>-->
             <button :title="addButtonTitle" @click="addNote"><i class="material-icons">add</i> Add note</button>
           </div>
+          <div class="notes">
+            <!-- Note list here -->
+            <div class="note" v-for="note of notes">{{note.title}}</div>
+          </div>
         </aside>
         <!-- Main pane -->
         <section class="main">
