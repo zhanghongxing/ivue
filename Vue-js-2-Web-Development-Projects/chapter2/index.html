@@ -29,15 +29,15 @@
         <div class="note" v-for="note of notes" @click="selectNote(note)" :class="{selected: note === selectedNote}">{{note.title}}</div>
       </div>
     </aside>
-    <!--<template v-if="selectedNote">-->
+    <template v-if="selectedNote">
     <!-- Main pane -->
-    <section class="main" v-if="selectedNote">
+    <section class="main">
       <textarea v-model="selectedNote.content"></textarea>
     </section>
     <!-- Preview pane -->
-    <aside class="preview" v-html="notePreview" v-if="selectedNote">
+    <aside class="preview" v-html="notePreview">
     </aside>
-    <!--</template>-->
+    </template>
   </div>
   <!-- Some JavaScript -->
   <script src="script.js"></script>
