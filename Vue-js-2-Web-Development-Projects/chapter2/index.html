@@ -21,7 +21,7 @@
             <!-- Add note button -->
             <!--<button v-on:click="addNote"><i class="material-icons">add</i> Add note</button>-->
             <!--<button v-bind:title="notes.length + ' note(s) already'" @click="addNote"><i class="material-icons">add</i> Add note</button>-->
-            <button :title="notes.length + ' note(s) already'" @click="addNote"><i class="material-icons">add</i> Add note</button>
+            <button :title="addButtonTitle" @click="addNote"><i class="material-icons">add</i> Add note</button>
           </div>
         </aside>
         <!-- Main pane -->
