@@ -6,6 +6,8 @@ new Vue({
   data() {
     return {
       content: localStorage.getItem('content') || 'You can write in **markdown**',
+      // New! A note array
+      notes: [],
     }
   },
   // Computed properties
