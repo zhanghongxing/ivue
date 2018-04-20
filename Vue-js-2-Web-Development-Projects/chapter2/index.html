@@ -1,43 +1,46 @@
 <html>
 
 <head>
-    <title>Notebook</title>
-    <!-- Icons & Stylesheets -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" /> </head>
+  <title>Notebook</title>
+  <!-- Icons & Stylesheets -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" /> </head>
 
 <body>
-    <!-- Include the library in the page -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <!-- Add the marked library: -->
-    <script src="https://unpkg.com/marked"></script>
-    <!-- Notebook app -->
-    <div id="notebook">
-        <!-- Sidebar -->
-        <aside class="side-bar">
-          <!-- Here will be the note list -->
-          <!-- Toolbar -->
-          <div class="toolbar">
-            <!-- Add note button -->
-            <!--<button v-on:click="addNote"><i class="material-icons">add</i> Add note</button>-->
-            <!--<button v-bind:title="notes.length + ' note(s) already'" @click="addNote"><i class="material-icons">add</i> Add note</button>-->
-            <button :title="addButtonTitle" @click="addNote"><i class="material-icons">add</i> Add note</button>
-          </div>
-          <div class="notes">
-            <!-- Note list here -->
-            <div class="note" v-for="note of notes" @click="selectNote(note)">{{note.title}}</div>
-          </div>
-        </aside>
-        <!-- Main pane -->
-        <section class="main">
-          <textarea v-model="content"></textarea>
-        </section>
-        <!-- Preview pane -->
-        <aside class="preview" v-html="notePreview">
-        </aside>
-    </div>
-    <!-- Some JavaScript -->
-    <script src="script.js"></script>
+  <!-- Include the library in the page -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- Add the marked library: -->
+  <script src="https://unpkg.com/marked"></script>
+  <!-- Notebook app -->
+  <div id="notebook">
+    
+    <!-- Sidebar -->
+    <aside class="side-bar">
+      <!-- Here will be the note list -->
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <!-- Add note button -->
+        <!--<button v-on:click="addNote"><i class="material-icons">add</i> Add note</button>-->
+        <!--<button v-bind:title="notes.length + ' note(s) already'" @click="addNote"><i class="material-icons">add</i> Add note</button>-->
+        <button :title="addButtonTitle" @click="addNote"><i class="material-icons">add</i> Add note</button>
+      </div>
+      <div class="notes">
+        <!-- Note list here -->
+        <div class="note" v-for="note of notes" @click="selectNote(note)">{{note.title}}</div>
+      </div>
+    </aside>
+    <template v-if="selectedNote">
+    <!-- Main pane -->
+    <section class="main">
+      <textarea v-model="selectedNote.content"></textarea>
+    </section>
+    <!-- Preview pane -->
+    <aside class="preview" v-html="notePreview">
+    </aside>
+    </template>  
+  </div>
+  <!-- Some JavaScript -->
+  <script src="script.js"></script>
 </body>
 
 </html>
