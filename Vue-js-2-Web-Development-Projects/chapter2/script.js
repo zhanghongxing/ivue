@@ -37,6 +37,12 @@ new Vue({
     },
   },
 
+  // This will be called when the instance is ready  
+  created() { 
+    // Set the content to the stored value    
+    // or to a default string if nothing was saved    
+    this.content = localStorage.getItem('content') || 'You can write in **markdown**'
+  },
 })
 
 console.log('restored note:', localStorage.getItem('content'))
