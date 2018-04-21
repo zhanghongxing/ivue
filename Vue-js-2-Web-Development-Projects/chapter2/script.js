@@ -6,7 +6,8 @@ new Vue({
   data() {
     return {
       // New! A note array
-      notes: [],
+      // notes: [],
+      notes: JSON.parse(localStorage.getItem('notes')) || [],
       // Id of the selected note
       selectedId: null,
     }
@@ -28,13 +29,21 @@ new Vue({
   
   // Change watchers  
   watch: {
+    notes: {
+      // The method name
+      handler: 'saveNotes',
+      // We need this to watch each note's properties inside the array
+      deep: true,
+    },
   },
   
   methods: {
-    saveNote() {
-      console.log('saving note:', this.content)
-      localStorage.setItem('content', this.content)
-      this.reportOperation('saving')
+    saveNotes() {
+      //console.log('saving note:', this.content)
+      //localStorage.setItem('content', this.content)
+      localStorage.setItem('notes', JSON.stringify(this.notes))
+      //this.reportOperation('saving')
+      console.log('Notes saved!', new Date())
     },
     // Add a note with some default content and select it  
     addNote() {
