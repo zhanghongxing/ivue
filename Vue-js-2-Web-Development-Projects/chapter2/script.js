@@ -1,3 +1,5 @@
+Vue.filter('date', time => moment(time).format('DD/MM/YY, HH:mm'))
+
 // New VueJS instance      
 new Vue({
   // CSS selector of the root DOM element        
@@ -103,5 +105,6 @@ new Vue({
     // this.content = localStorage.getItem('content') || 'You can write in **markdown**'
   },
 })
+
 
 // console.log('restored note:', localStorage.getItem('content'))
