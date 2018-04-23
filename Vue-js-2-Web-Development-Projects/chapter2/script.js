@@ -25,6 +25,9 @@ new Vue({
       // We return the matching note with selectedId          
       return this.notes.find(note => note.id === this.selectedId)
     },
+    sortedNotes() {
+      return this.notes.slice().sort((a, b) => a.created - b.created).sort((a, b) => (a.favorite === b.favorite) ? 0 : a.favorite ? -1 : 1)
+    },
   },
   
   // Change watchers  
@@ -69,6 +72,7 @@ new Vue({
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
       )
     },
+    
     selectNote (note) {
       this.selectedId = note.id
     },
@@ -76,6 +80,7 @@ new Vue({
     saveId (val) {
       localStorage.setItem('selected-id', val)
     },
+    
     removeNote() {
       if (this.selectedNote && confirm('Delete the note?')) {
         // Remove the note in the notes array
@@ -84,6 +89,10 @@ new Vue({
           this.notes.splice(index, 1)
         }
       }
+    },
+    
+    favoriteNote() {
+      this.selectedNote.favorite = !this.selectedNote.favorite
     },
   },
 
