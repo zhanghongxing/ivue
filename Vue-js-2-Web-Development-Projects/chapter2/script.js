@@ -35,9 +35,9 @@ new Vue({
       // We need this to watch each note's properties inside the array
       deep: true,
     },
-    selectedId: {
+    selectedId(val){
       // The method name
-      handler: 'saveId',
+      localStorage.setItem('selected-id', val)
     },
   },
   
