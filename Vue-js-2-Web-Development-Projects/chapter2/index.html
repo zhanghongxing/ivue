@@ -32,6 +32,9 @@
     <template v-if="selectedNote">
     <!-- Main pane -->
     <section class="main">
+      <div class="toolbar">
+        <!-- Our toolbar is here! -->
+      </div>
       <textarea v-model="selectedNote.content"></textarea>
     </section>
     <!-- Preview pane -->
