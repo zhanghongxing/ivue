@@ -1,5 +1,10 @@
 <template>
   <div>
+    <template>
+      <article class="article">
+        <h3 class="title">{{ title }}</h3>
+      </article>
+    </template>
     <p>{{ message }}</p>
     <input v-model="message">
     <ul class="movies">
@@ -13,6 +18,7 @@ export default {
   data() {
     return {
       message: "Hello world",
+      title: "Hello Vue!",
       movies: [{ title: "Star Wars" }, { title: "Blade Runner" }]
     };
   }
@@ -29,4 +35,10 @@ p {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
+</style>
+
+<style lang="sass" scoped>
+.article
+  .title
+    border-bottom: solid 3px rgba(red, .2)
 </style>
