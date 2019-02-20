@@ -11,11 +11,9 @@
 <script>
 export default {
   data() {
-    return { message: "Hello world",
-             movies: [
-                { title: 'Star Wars' },
-                { title: 'Blade Runner' },
-              ],
+    return {
+      message: "Hello world",
+      movies: [{ title: "Star Wars" }, { title: "Blade Runner" }]
     };
   }
 };
@@ -24,5 +22,11 @@ export default {
 <style>
 p {
   color: grey;
+}
+.movies {
+  list-style: none;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
 }
 </style>
