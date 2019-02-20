@@ -37,8 +37,10 @@ p {
 }
 </style>
 
-<style lang="sass" scoped>
-.article
-  .title
-    border-bottom: solid 3px rgba(red, .2)
+<style lang="less" scoped>
+.article {
+  .title {
+    border-bottom: solid 3px fade(red, 20%);
+  }
+}
 </style>
