@@ -6,7 +6,7 @@
 
     <div class="error" v-if="error">Can't load the questions</div>
     <section class="list">
-      <article v-for="question of questions">
+      <article v-for="question of questionList">
         <h2 v-html="question.title"></h2>
         <p v-html="question.content"></p>
       </article>
@@ -19,7 +19,9 @@ import RemoteData from '../mixins/RemoteData'
 
 export default {
   mixins: [
-    RemoteData,
+    RemoteData({
+      questionList: 'questions',
+    }),
   ],
 
   data() {
